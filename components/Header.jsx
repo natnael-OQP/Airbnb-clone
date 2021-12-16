@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className='h-16 flex items-center overflow-hidden shadow-ms border-b sticky top-0 px-1 sm:px-4 py-3  z-50 grid grid-cols-3 md:px-7 lg:px-10 bg-white  ' >
             {/*Left*/}
-            <div className="relative h-6 w-16 md:h-8 bg-slate-100 flex items-center  cursor-pointer" >
+            <div className="relative h-6  w-16 md:h-8 lg:10  lg:w-20 flex items-center  cursor-pointer" >
                 <Image objectFit='contain' layout="fill" src='https://links.papareact.com/qd3' alt='logo'  />
             </div>
             {/*Middle*/}
