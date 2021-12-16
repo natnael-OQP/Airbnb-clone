@@ -2990,6 +2990,16 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
+swr@^1.1.2-beta.0:
+  version "1.1.2-beta.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-1.1.2-beta.0.tgz#4c25f3a8e1f825b15426dd8c62d10cec95429be6"
+  integrity sha512-e7ZcPCrEvGX+s4jDtBwV9c+HKqHzG1secuwU8bYjnnGkSJMneyn7OaabJKtRh922DH5a3k2vvBdhftoSL8bHJQ==
+
+tailwind-scrollbar-hide@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/tailwind-scrollbar-hide/-/tailwind-scrollbar-hide-1.1.6.tgz#9b9affcd5b0faba87148528891aa2168bc7c4dc5"
+  integrity sha512-WDF6t3YZbHpte7gwz6h4hwRl0unkC+exVz4ucAuDOtFwkOs8Pc77Bd6HBm//PMXVa6a6uQfDBsv8AiSa6GJq7A==
+
 tailwindcss@^3.0.5:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.0.5.tgz#468e20347b8c4b59bb0585361682126edb1dd9e3"
