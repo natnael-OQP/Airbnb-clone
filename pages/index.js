@@ -7,8 +7,8 @@ import { fetcher } from '../Fetcher/Fetcher';
 import MediumCard from '../components/MediumCard';
 import LargeCard from '../components/LargeCard';
 import Footer from '../components/Footer';
+
 function Home({ exploreData,mediumCard }) {
-  console.log(mediumCard);
   return (
     <div>
       <Head>
