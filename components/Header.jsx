@@ -13,20 +13,38 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 // react-router
 import { useRouter } from 'next/router';
-
 const Header = () => {
     const router = useRouter()
+    const [guests, setGuests] = useState(1);
     const [searchInput, setSearchInput] = useState('');
+    const [placeholder,setPlaceholder] = useState('Start your search');
     const [selectionRange, setSelectionRange] = useState([{
             startDate: new Date(),
             endDate: new Date(),
             key: 'selection'
     }]);
-    const [guests, setGuests] = useState(1);
+    const [{startDate,endDate}] = selectionRange;
+    
+    const goToSearch = () => {
+        router.push({
+            pathname: '/search',
+            query: {
+                location: searchInput,
+                startDate:startDate.toISOString() ,
+                endDate:endDate.toISOString() ,
+                guests
+            }
+        })
+        let placeholder = ` welcome to ${searchInput} || guests ${guests}` ;
+        setSearchInput("")
+        setPlaceholder(placeholder)
+    }
     return (
-        <header className='flex  items-center justify-center overflow-hidden shadow-ms border-b sticky top-0 px-1 sm:px-4 py-2  z-50 grid grid-cols-3 md:px-7 lg:px-10 bg-white  ' >
+        <header className='flex  items-center justify-center overflow-hidden shadow-sm  sticky top-0 px-1 sm:px-4 py-2  z-50 grid grid-cols-3 md:px-7 lg:px-10 bg-white  ' >
             {/*Left*/}
-            <div className="relative h-6  w-16 md:h-8 lg:10  lg:w-20 flex items-center  cursor-pointer" >
+            <div
+                onClick={()=>router.push('/')}
+                className="relative h-6  w-16 md:h-8   lg:w-20 flex items-center  cursor-pointer" >
                 <Image objectFit='contain' layout="fill" src='https://links.papareact.com/qd3' alt='logo'  />
             </div>
             {/*Middle*/}
@@ -34,8 +52,11 @@ const Header = () => {
                 <input
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
-                    className='bg-white w-full outline-none  md:flex-grow ml-1 text-sm text-gray-400 font-semibold font-mono ' type="search" placeholder='search ' />
-                <SearchIcon className="  md:inline hidden w-[27px] h-[27px] flex items-center justify-center bg-red-400  p-2 cursor-pointer text-white rounded-full " />
+                    type="search"
+                    placeholder={placeholder}
+                    className='bg-white w-full outline-none  md:flex-grow ml-1 text-sm text-gray-400 font-semibold font-mono '
+                />
+                <SearchIcon className=" md:inline hidden w-[27px] h-[27px] flex items-center justify-center bg-red-400  p-2 cursor-pointer text-white rounded-full " />
             </div>
             {/*Right*/}
             <div className="flex space-x-2 items-center justify-end text-gray-500  " >
@@ -70,7 +91,7 @@ const Header = () => {
                                 onClick={()=>setSearchInput("")}
                                 className="text-slate-500 font-semibold " >Cancel</button>
                             <button
-                                onClick={()=>router.push('/search')}
+                                onClick={goToSearch}
                                 className="font-semibold text-red-400  " >Search</button>
                         </div>
                     </div>
