@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .search-btn {
+        @apply py-2 select-none px-4 border rounded-full text-sm font-semibold text-slate-600 cursor-pointer shadow-sm hover:shadow-md transition  active:scale-95 active:bg-slate-50 duration-150 transform ease-in-out
+    }
+}
