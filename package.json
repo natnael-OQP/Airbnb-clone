@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.5",
     "autoprefixer": "^10.4.0",
     "axios": "^0.24.0",
