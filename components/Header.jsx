@@ -86,13 +86,13 @@ const Header = () => {
                                 className="w-12 bg-gray-100 pl-3 outline-none text-lg text-red-400 " type="number" />
                             <button>cancel</button>
                         </div>
-                        <div className="flex justify-around " >
+                        <div className="flex space-x-4 pb-3 " >
                             <button
                                 onClick={()=>setSearchInput("")}
-                                className="text-slate-500 font-semibold " >Cancel</button>
+                                className="text-slate-500 font-semibold m-1 px-2 py-1 bg-white shadow-sm hover:bg-[#FE595E] hover:text-white hover:shadow-md transition duration-200 transform ease-in-out " >Cancel</button>
                             <button
                                 onClick={goToSearch}
-                                className="font-semibold text-red-400  " >Search</button>
+                                className="font-semibold  text-red-400 m-1 px-2 py-1 bg-white shadow-sm  hover:bg-[#FE595E] hover:text-white hover:shadow-md transition duration-200 transform ease-in-out  " >Search</button>
                         </div>
                     </div>
                 )
